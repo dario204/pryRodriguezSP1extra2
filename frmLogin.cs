@@ -16,7 +16,7 @@ namespace pryRodriguezSP1extra2
         {
             InitializeComponent();
         }
-
+        int intentos=0;
         private void txtContraseña_TextChanged(object sender, EventArgs e)
         {
             if (txtContraseña.Text!="")
@@ -39,12 +39,19 @@ namespace pryRodriguezSP1extra2
                     this.Show();
 
                 }
+                else
+                {
+                    
+                    MessageBox.Show("Usuario y/o contraseña incorrectos para el módulo seleccionado");
+                    intentos++;
+                    if (intentos==2)
+                    {
+                      
+                        this.Close();
+                    }
+                }
             }
-            else
-            {
-                MessageBox.Show("Usuario y/o contraseña incorrectos para el módulo seleccionado");
-            }
-            //2
+           //2
             if (txtUsuario.Text=="John"&& txtUsuario.Text=="*2b")
             {
                 this.Hide();
@@ -52,6 +59,15 @@ namespace pryRodriguezSP1extra2
                 f.Text = txtUsuario.Text;
                 f.ShowDialog();
                 this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuario y/o contraseña incorrectos para el módulo seleccionado");
+                intentos++;
+                if (intentos==2)
+                {
+                    this.Close();
+                }
             }
             //3
             if (txtUsuario.Text=="Ceci" && txtContraseña.Text=="*@3c")
@@ -63,6 +79,15 @@ namespace pryRodriguezSP1extra2
                     f.Text = txtUsuario.Text;
                     f.ShowDialog();
                     this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario y/o contraseña incorrectos para el módulo seleccionado");
+                    intentos++;
+                    if (intentos==2)
+                    {
+                        this.Close();
+                    }
                 }
             }
             //4
@@ -76,6 +101,15 @@ namespace pryRodriguezSP1extra2
                     f.ShowDialog();
                     this.Show();
                 }
+                else
+                {
+                    MessageBox.Show("Usuario y/o contraseña incorrectos para el módulo seleccionado");
+                    intentos++;
+                    if (intentos==2)
+                    {
+                        this.Close();
+                    }
+                }
             }
         }
 
@@ -83,6 +117,11 @@ namespace pryRodriguezSP1extra2
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
